@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)file:///C:/Users/yash/Desktop/diya/Z/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="container">
+        <h2>DONATE</h2>
+        <form id="contact-form" method="POST" action="file:///C:/Users/yash/Desktop/diya/Z/index.html#">
+            <div class="form-group">
+                <label for="medicine">Medicine Name</label>
+                <select id="medicine" name="medicine">
+                    <option value="">-- Select a Medicine --</option>
+                    <option value="paracetamol">Paracetamol</option>
+                    <option value="ibuprofen">Ibuprofen</option>
+                    <option value="aspirin">Aspirin</option>
+                    <option value="amoxicillin">Amoxicillin</option>
+                    <option value="cephalexin">Cephalexin</option>
+                    <option value="diazepam">Diazepam</option>
+                    <option value="loratadine">Loratadine</option>
+                    <option value="metformin">Metformin</option>
+                    <option value="simvastatin">Simvastatin</option>
+                    <option value="other">Other (please specify)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="name">Other</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="meetingDate">Expiry Date</label>
+                <input type="date" id="meetingDate" name="meetingDate" required="">
+            </div>
+            <div id="otherMedicine" style="display: none;">
+                <label for="otherMedicineInput">Specify Other Medicine</label>
+                <input type="text" id="otherMedicineInput" name="otherMedicine">
+            </div>
+           <div class="form-group">
+                <label for="number">Quantity (more than 4)</label>
+                <input type="number" id="number" name="number" required="" min="5">
+            </div>
+            <div class="form-group">
+                <label for="image">Upload Image</label>
+                <input type="file" id="image" name="image" accept="image/*" required="">
+            </div>
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required="">
+            </div>
+            <div class="form-group">
+                <label for="contactNumber">Contact Number</label>
+                <input type="tel" id="contactNumber" name="contactNumber" required="">
+                            </div>
+                       <div class="form-group">
+            </div>
+            <div class="form-group">
+                <label id="location-field" for="location">Address</label>
+                <div id="location">
+                    <textarea id="location-field" name="address" rows="3" required=""></textarea>
+                    <button id="get-location" type="button" onclick="getLocation()">Get Location</button>
+                </div>
+            </div>
+            <button type="submit">Send</button>
+            <button type="reset">Reset</button>
+            <div id="form-status"></div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+
+
+</body></html>
