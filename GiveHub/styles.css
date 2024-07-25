@@ -85,12 +85,19 @@ nav ul button {
     width: 200px;
     font-size: 16px;
     background: #33577e;
+    text-decoration: none;
     border: none;
     color: white;
 }
 
 nav ul button:hover {
-    background: #2a4767;
+    background: #619cda3a;
+    cursor: pointer;
+    text-decoration: underline;
+    border-radius: 25px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(0.7);
+    transition: transform 0.2s ease-in-out;
 }
 
 header {
@@ -118,12 +125,33 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
+
 #logo-container {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     margin-top: 120px;
 }
+.spinner {
+    /* background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255)); */
+    margin-top: 120px;
+    margin-left: 20px;
+    width: 170px;
+    height: 170px;
+    animation: spinning82341 1.7s linear infinite;
+    text-align: center;
+    border-radius: 90px;
+    filter: blur(1px);
+    box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+  }
+  
+  
+  
+  @keyframes spinning82341 {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 
 #logo {
     height: 130px;
