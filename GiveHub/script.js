@@ -33,4 +33,5 @@ shareButton.addEventListener('click', async () => {
     console.error('Error sharing:', error);
     // Handle errors while sharing
   }
+  
 });

@@ -49,8 +49,9 @@
             <div class="form-group">
                 <label for="location">Address</label>
                 <div id="location">
-                    <textarea id="location-field" name="address" rows="3" required=""></textarea>
-                    <button id="get-location"type="button" onclick="getLocation()">Get Location</button>
+                    <input type="text" name="location" id="request-location" class="form-control" placeholder="Your location" readonly>
+                    <button type="button" class="form-control" id="request-get-location" onclick="getLocation('request')">Get Location</button>
+
                 </div>
             </div>
             <button type="submit">Send</button>
@@ -58,5 +59,22 @@
             <div id="form-status"></div>
         </form>
     </div>
-    <script src="./Donation_files/script.js.download"></script>
+    <script>
+        function getLocation(formId) {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    position => {
+                        const locationField = document.getElementById(`${formId}-location`);
+                        locationField.value = `${position.coords.latitude}, ${position.coords.longitude}`;
+                    },
+                    error => {
+                        alert("Unable to retrieve your location. Please try again.");
+                    }
+                );
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+    </script>
+    <script src="./script.js"></script>
 </body></html>
