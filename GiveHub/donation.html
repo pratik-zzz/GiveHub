@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h2>DONATE</h2>
-        <form id="contact-form" method="POST" action="file:///C:/Users/yash/Desktop/diya/Z/index.html#">
+        <form id="contact-form" method="POST" action="#">
             <div class="form-group">
                 <label for="medicine">Medicine Name</label>
                 <select id="medicine" name="medicine">
@@ -26,17 +26,13 @@
                     <option value="other">Other (please specify)</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label for="name">Other</label>
-                <input type="text" id="name" name="name">
+            <div class="form-group" id="otherMedicine" style="display: none;">
+                <label for="otherMedicineInput">Specify Other Medicine</label>
+                <input type="text" id="otherMedicineInput" name="otherMedicine">
             </div>
             <div class="form-group">
                 <label for="meetingDate">Expiry Date</label>
                 <input type="date" id="meetingDate" name="meetingDate" required="">
-            </div>
-            <div id="otherMedicine" style="display: none;">
-                <label for="otherMedicineInput">Specify Other Medicine</label>
-                <input type="text" id="otherMedicineInput" name="otherMedicine">
             </div>
            <div class="form-group">
                 <label for="number">Quantity (more than 4)</label>
@@ -69,6 +65,5 @@
         </form>
     </div>
     <script src="script.js"></script>
-
-
-</body></html>
+</body>
+</html>
