@@ -1,11 +1,43 @@
+
+
 function handleDonateButtonClick() {
     window.location.href = 'donation.html'; 
 }
+// Additional code for donate.html
+if (window.location.pathname.includes('donate.html')) {
+  const donateForm = document.getElementById('donateForm'); // Assuming there's a form with id "donateForm"
+  if (donateForm) {
+      donateForm.addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent the default form submission
+
+          // Handle form submission logic here
+          console.log('Form submitted!');
+
+          // Example: Redirect to a thank-you page
+          window.location.href = 'thankyou.html'; 
+      });
+  }
+}
+
+
 function handleRequestButtonClick() {
     window.location.href = 'request.html'; 
 }
+document.addEventListener('DOMContentLoaded', function() {
+  var medicineSelect = document.getElementById('medicine');
+  var otherMedicineSection = document.getElementById('otherMedicine');
+
+  medicineSelect.addEventListener('change', function() {
+      if (this.value === 'other') {
+          otherMedicineSection.style.display = 'block';
+      } else {
+          otherMedicineSection.style.display = 'none';
+      }
+  });
+});
 document.getElementById('donateButton').addEventListener('click', handleDonateButtonClick);
 document.getElementById('requestButton').addEventListener('click', handleRequestButtonClick);
+
 
 // Get a reference to the share button
 const shareButton = document.getElementById('shareButton');

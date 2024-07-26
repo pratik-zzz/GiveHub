@@ -32,30 +32,63 @@ p {
     padding: 100px 50px;
     margin-top: 20px;
 }
-
-.buttons {
+.button {
+    transition: all 0.3s ease-in-out;
+    font-family: "Dosis", sans-serif;
+  }
+  
+  .button {
+    
+    width: 170px;
+    height: 80px;
+    border-radius: 50px;
+    justify-content: space-between;
+    background-color:#33577e;
+    box-shadow:  #071a2eb6;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    font-size: 24px;
+    color: white;
+  }
+  
+  button:hover {
+    transform: translateY(3px);
+    box-shadow: none;
+  }
+  
+  .button:active {
+    opacity: 0.5;
+  }
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Adjust the value to increase or decrease space */
+    margin-top: 20px;
+}
+/* .buttons {
     margin-top: 20px;
     box-shadow: none;
-}
+} */
 
-.button {
+/* .button {
     display: inline-block;
-    padding: 35px 60px;
-    background-color:#33577e;   ;  /* rgba(41, 80, 95, 0.864);*/
-    color: #ffffff;
+    padding: 35px 60px; */
+    /* background-color:#33577e;   ;  rgba(41, 80, 95, 0.864); */
+    /* color: #ffffff;
     font-weight: bold;
     text-decoration: none;
     border-radius: 20px;
     margin-right: 100px;
     margin-left: 100px;
     font-size: 25px;
-    margin-bottom: -20px;
-}
+    margin-bottom: -20px; */
+/* } */
 
-.button:hover {
+/* .button:hover {
     background-color: #223b55;
     cursor: pointer;
-}
+} */
 
 /* Content Section */
 .content {
@@ -85,12 +118,19 @@ nav ul button {
     width: 200px;
     font-size: 16px;
     background: #33577e;
+    text-decoration: none;
     border: none;
     color: white;
 }
 
 nav ul button:hover {
-    background: #2a4767;
+    background: #619cda3a;
+    cursor: pointer;
+    text-decoration: underline;
+    border-radius: 25px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(0.7);
+    transition: transform 0.2s ease-in-out;
 }
 
 header {
@@ -118,12 +158,33 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
+
 #logo-container {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     margin-top: 120px;
 }
+.spinner {
+    /* background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255)); */
+    margin-top: 120px;
+    margin-left: 20px;
+    width: 170px;
+    height: 170px;
+    animation: spinning82341 1.7s linear infinite;
+    text-align: center;
+    border-radius: 90px;
+    filter: blur(1px);
+    box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+  }
+  
+  
+  
+  @keyframes spinning82341 {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 
 #logo {
     height: 130px;
@@ -131,3 +192,4 @@ header nav ul li a:hover {
     border-radius: 50%;
     border: solid #33577e 30px;
 }
+
