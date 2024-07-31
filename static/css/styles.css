@@ -319,9 +319,7 @@ header nav ul {
         transform: translateX(  0px);
     }
  }
-
-
-
+ 
 .team-member {
     display: flex;
     flex-direction: row;
