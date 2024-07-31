@@ -37,3 +37,37 @@ try {
   // Handle errors while sharing
 }
 });
+
+// Get location button function for donation form
+function getLocation(formId) {
+  if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+          position => {
+              const locationField = document.getElementById(`${formId}-location`);
+              locationField.value = `${position.coords.latitude}, ${position.coords.longitude}`;
+          },
+          error => {
+              alert("Unable to retrieve your location. Please try again.");
+          }
+      );
+  } else {
+      alert("Geolocation is not supported by this browser.");
+  }
+}
+
+// Get location button function for request form
+function getLocation(formId) {
+  if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+          position => {
+              const locationField = document.getElementById(`${formId}-location`);
+              locationField.value = `${position.coords.latitude}, ${position.coords.longitude}`;
+          },
+          error => {
+              alert("Unable to retrieve your location. Please try again.");
+          }
+      );
+  } else {
+      alert("Geolocation is not supported by this browser.");
+  }
+}
