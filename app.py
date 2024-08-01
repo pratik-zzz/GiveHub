@@ -52,7 +52,7 @@ def request_medicine():
         image = request.files['image']
         requester_name = request.form['name']
         contact_number = request.form['contactNumber']
-        address = request.form['address']
+        address = request.form['location']
         conn = get_db_connection()
         cur = conn.cursor() 
         cur.execute("INSERT INTO requests (medicine, quantity, requester_name, contact_number, address) VALUES (%s, %s, %s, %s, %s)",
