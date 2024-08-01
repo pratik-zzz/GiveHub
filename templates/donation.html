@@ -4,12 +4,12 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate</title>
-    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/styles2.css') }}">
 </head>
 <body>
     <div class="container">
         <h2>DONATE</h2>
-        <form id="contact-form" method="POST" action="file:///C:/Users/yash/Desktop/diya/Z/index.html#">
+        <form id="contact-form" method="POST" action="{{ url_for('donation') }}" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="medicine">Medicine Name</label>
                 <select id="medicine" name="medicine">
@@ -60,8 +60,7 @@
                 <label id="location-field" for="location">Address</label>
                 <div id="location">
                     <input type="text" name="location" id="request-location" class="form-control" placeholder="Your location" readonly>
-                    <button type="button" class="form-control" id="request-get-location" onclick="getLocation('request')" >Get Location</button>
-              
+                    <button type="button" class="form-control" id="request-get-location" onclick="getLocation('request')">Get Location</button>
                 </div>
             </div>
             <button type="submit">Send</button>
@@ -69,24 +68,7 @@
             <div id="form-status"></div>
         </form>
     </div>
-    <script>
-        function getLocation(formId) {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    position => {
-                        const locationField = document.getElementById(`${formId}-location`);
-                        locationField.value = `${position.coords.latitude}, ${position.coords.longitude}`;
-                    },
-                    error => {
-                        alert("Unable to retrieve your location. Please try again.");
-                    }
-                );
-            } else {
-                alert("Geolocation is not supported by this browser.");
-            }
-        }
-    </script>
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='../static/js/script.js') }}"></script>
 
 
 </body></html>
