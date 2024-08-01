@@ -20,12 +20,12 @@
                 </li>
                 <li>
                     <div>
-                        <a href="{{ url_for('about_us') }}"><button>About us</button></a>
+                        <a href="#aboutus"><button>About us</button></a>
                     </div>
                 </li>
                 <li>
                     <div>
-                        <a href="{{ url_for('contact_us') }}"><button>Contact us</button></a>
+                        <a href="#contact"><button>Contact us</button></a>
                     </div>
                 </li>
             </ul>
@@ -46,7 +46,7 @@
             </p>
         </section>
         
-        <section class="hero0">
+        <section class="aboutus"id="aboutus">
             <div class="container">
                <div class="hero0-content0">
                    <h2>Our Mission</h2>
@@ -121,6 +121,45 @@
           </div>
          </section> 
     </main>
+     <!-- footer start -->
+     <section class="contact" id="contact">
+        <footer class="site-footer section-padding" id="contact">
+           <div class="container">
+               <div class="column">
+                 <h3>Reg.Office</h3>
+                 <p>XYZ,Jalgaon, Maharashtra, India, 425001</p>
+                 <p>24X7 In Service</p>
+                 <p>Monday - Sunday</p>
+               </div>
+               <div class="column">
+                 <h3>Our HUB</h3>
+                 <a href="mailto:givehubdonation@gmail.com"><p>givehubdonation@gmail.com</p></a>
+                 <p>123 xyz Nagar, <br>Jalgaon, Maharashtra <br> 425001</p>
+               </div>
+               <div class="column">
+                 <h3>Socials</h3>
+                 <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61563915081013" class="social-icon" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook-f"></i></a>
+                   
+                        <i class="fab fa-X"></i>
+                   <a href="https://www.instagram.com/givehubdonation?igsh=MWNhZGswZHBzc3Bxcw==" class="social-icon" target="_blank" rel="noopener noreferrer">
+                   <i class="fab fa-instagram"></i>
+                   </a>
+                   <a href="mailto:givehubdonation@gmail.com" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                 </div>
+                 
+                 <p>Copyright © GIVE HUB 2024</p>
+                 <p>Design: Tech Titans </p>
+               </div>
+             </div>
+               </footer>
+       
+       
+   
+         <!-- footer end -->
     <script src="{{ url_for('static', filename='../static/js/script.js') }}"></script>
 
 </body>

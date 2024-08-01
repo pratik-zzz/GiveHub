@@ -362,3 +362,48 @@ header nav ul {
     color: purple;
     text-decoration: underline;
 } */
+ /* Footer Styles */
+.site-footer {
+    background-color: #33577e;
+    padding: 10px 0;
+    color: #333;
+}
+
+.site-footer h3 {
+    margin-top: 0;
+    color: #0b0c0c;
+    font-size: 24px; 
+}
+
+.site-footer p {
+    margin: 5px 0;
+    font-size: 12px; 
+    color: #ffffff; 
+}
+.site-footer a {
+    margin: 5px 0;
+    font-size: 12px; 
+    color: #ffffff; 
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.column {
+    text-align: left;
+    margin: 0 20px;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons i {
+    margin-left: 10px;
+    font-size: 1.5rem;
+    color: #ccc;
+}
