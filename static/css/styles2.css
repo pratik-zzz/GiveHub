@@ -92,3 +92,71 @@ button:hover {
     margin-top: 20px;
     text-align: center;
 }
+/* help button start */
+.help-button {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    background-color: #46709c;
+   border-radius: 10px 0 0 10px; 
+    padding: 5px 0;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #46709c;
+    color: white;
+    cursor: pointer;
+    margin: 5px 0;
+    font-size: 20px;
+}
+
+.icon:hover {
+    background-color: #483f93;
+}
+
+.help-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.help-modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.help-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.help-close:hover,
+.help-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* help button end */
