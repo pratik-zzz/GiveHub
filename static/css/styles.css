@@ -513,7 +513,7 @@ nav ul button:hover {
 }
 
 .icon:hover {
-    background-color: #483f93;
+    background-color: #5085c1;
 }
 
 .help-modal {
@@ -754,5 +754,9 @@ nav ul button:hover {
 
     .hero3 h2 {
         margin-bottom: 1.5rem !important;
+    }
+
+    .contact-form .form-group {
+        width: 10px !important;
     }
 }
