@@ -1,157 +1,314 @@
 /* styles.css */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    width: 100%;
+}
+
 h1 {
     color:#33577e;  
-    font-size: 50px;
-    margin-bottom: 80px;
-}
+    font-size: 3.2rem;
+}   
+
 .p1 {
     color:#33577e;  
-    font-size: 30px;
+    font-size: 1.7rem;
     font-family: "Arial",sans-serif;
-
-    /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    margin-top: 1rem;
+    margin-bottom: 3rem;
 }
-
 
 /* Main Section */
 .hero {
     font-family: Arial, sans-serif;
-    /* background-image: url('https://i.pinimg.com/736x/9b/3e/55/9b3e55823f77e4c62cfb288561b355d6.jpg');*/
-    background: linear-gradient(to bottom, #92b6d1, #b3bec5, #b3bec5, #92b6d1);
+    background: #8eaac8;
     background-size: 100%; /* Adjusted background size */
     margin: 0;
     padding: 0;
     color: #fff;
     text-align: center;
-    padding: 100px 50px;
+    padding: 5%;
 }
 
-.buttons {
-    margin-top: 20px;
-    box-shadow: none;
+#typing-text {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    height: 5rem;
 }
+
+.typed-cursor {
+    font-size: 3.3rem;   /* Adjust the size as needed */
+    color: #497db4;        /* Change the color */
+    animation: blink 0.7s infinite; /* Customize the blink animation */
+  }
 
 .button {
-    display: inline-block;
-    padding: 35px 60px;
-    background-color:#33577e;  
-
-    color: #ffffff;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 20px;
-    margin-right: 100px;
-    margin-left: 100px;
-    font-size: 25px;
-    margin-bottom: -20px;
-}
-
-.button:hover {
-    background-color: #223b55;
+    transition: all 0.3s ease-in-out;
+    font-family: "Dosis", sans-serif;
+    width: 15rem;
+    height: 5rem;
+    margin-bottom: 2rem;
+    border-radius: 3.125rem;
+    justify-content: space-between;
+    background-color: #33577e;
+    box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(7, 26, 46, 0.7);
+    outline: none;
     cursor: pointer;
-}
-
-/* Content Section */
-/* .content {
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.content h1 {
-    font-size: 36px;
-    color: #333;
-}
-
-.content p {
-    font-size: 18px;
-    line-height: 1.6;
-} */
-
-nav {   
-    padding: 0;
-    display: flex;
-    align-items: center;  
-    height: 100px;
-}
-
-nav ul button {
-    height: 120px;
-    width: 200px;
-    font-size: 16px;
-    background-color:#33577e;  
     border: none;
+    font-size: 1.5rem;
     color: white;
 }
 
-nav ul button:hover {
-    background: #2a4767;
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0.625rem 0.625rem 1.25rem rgba(7, 26, 46, 0.5);
 }
 
-header {
-    background-color:#33577e;  
-    padding: 10px 0;
-    align-items: center; 
+.button:active {
+    opacity: 0.5;
 }
 
-header nav ul {
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 18.75rem; /* Adjust the value to increase or decrease space */
+    margin-top: 0;
+}
+
+/* Overall styling for the navbar */
+nav {
+    box-shadow: 0 0.3125rem 1.25rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures spacing between items */
+    height: 6.25rem;
+    position: fixed; /* Fixes the navbar at the top */
+    top: 0; /* Aligns it to the top of the viewport */
+    width: 100%; /* Ensures the navbar spans the full width */
+    background-color: #33577e; /* Background color for visibility */
+    z-index: 1000   ; /* Ensures it stays on top of other content */
+}
+
+/* Ensure content does not hide under the fixed navbar */
+body {
+    padding-top: 6.25rem; /* Adjust based on the height of your navbar */
+}
+
+/* Styling for the unordered list in the navbar */
+nav ul {
     list-style-type: none;
     display: flex;
     align-items: center;
-    margin-left: 50px;
-    padding: 0;
+    margin: 0 0 0 1.25rem; /* Remove default margin */
+    padding: 0; /* Remove default padding */
 }
 
-/* header nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 18px;
-} */
-/* header nav ul li a:hover {
-    text-decoration: underline;
-} */
+
+/* Styling for buttons inside the list items */
+nav ul button {
+    border-radius: 1.25rem;
+    height: 6.25rem;
+    width: 13.75rem;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); Add shadow for better visibility */
+    font-size: 1rem;
+    background-color: #33577e;
+    border: none;
+    color: white;
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Hover effect for buttons */
+nav ul button:hover {
+    background: #3e6898;
+}
+
+/* Styling for the spinner (if it's part of the navbar) */
+.spinner {
+    margin-left: auto; /* Push spinner to the right */
+}
+
+/* Styling for the logo container */
+#logo-container {
+    margin-left: auto; /* Push logo to the right */
+}
+
+/* Styling for the logo image */
+#logo {
+    height: 3.125rem; /* Adjust logo size as needed */
+}
+    
 
 #logo-container {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 120px;
+    margin-top: 7.5rem;
+}
+
+.spinner {
+    margin-top: 7.5rem;
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: spinning82341 1.7s linear infinite;
+    border-radius: 5.625rem;
+    filter: blur(1px);
+    box-shadow: 0 -0.3125rem 1.25rem 0 rgb(168, 70, 224), 0 0.3125rem 1.25rem 0 rgb(0, 225, 255);
+}
+
+@keyframes spinning82341 {
+    to {
+        transform: translateX(-50%) rotate(360deg);
+    }
 }
 
 #logo {
-    height: 180px;
+    height: 11.25rem;
     background-color: #ffff;
     border-radius: 50%;
-    border: solid #33577e 30px;
+    border: solid #33577e 1.875rem;
 }
 
 
 *{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing:border-box;
     font-family: "Arial",sans-serif;
 }
 
 .hero0{
-    background-color: #f8f8f8;
+    background-color: #548fcf;
     overflow: hidden;
-    height: 500px;
+    height: 31.25rem;
+    color: white;
 }
+
 .hero2{
-    /* background-color: #2b6ba2; */
-    background: linear-gradient(to bottom, #92b6d1, #b3bec5, #b3bec5, #92b6d1);
-    height: 550px;;
+    background:#8eaac8;
+    height: 34.375rem;
     overflow: hidden;
 }
-.hero3{
-    background-color: #f8f8f8;
-    height: 550px;;
-    overflow: hidden;
+
+/* Hero Section Styling */
+.hero3 {
+    background-color: #548fcf;
+    text-align: center;
+    padding: 3.125rem 1.25rem;
 }
+
+.ph h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1.25rem;
+    color: white;
+}
+
+/* Container Styling */
+.container3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+    gap: 1.25rem;
+    width: 90%;
+    max-width: 90rem;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+
+
+/* Team Member Card Styling */
+.team-member .card {
+    background: #b1bfce;
+    border-radius: 0.9375rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    width: 100%;
+    /* height: 10%; */
+    max-width: 18.75rem;
+    padding: 0;
+    text-align: center;
+}
+
+.card-image {
+/*     position: relative; */
+    top: -2.5rem;
+    /* margin-top: 20px; */
+     margin: 1.875rem auto auto auto; 
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-content {
+    padding: 1.25rem;
+    padding-top: 2.5rem;
+    text-align: center;
+}
+
+.name {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #33577e;
+    margin-bottom: 0.625rem;
+}
+
+.role {
+    font-size: 0.875rem;
+    color: #555;
+    margin-bottom: 0.625rem;
+}
+
+.social-media {
+    margin-top: 0.9375rem;
+}
+
+.social-media a {
+    color: #33577e;
+    margin: 0 0.625rem;
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #619cda;
+}
+
+.card:hover {
+    transform: translateY(-0.625rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.card:hover .card-image {
+    transform: translateY(-0.625rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
 .hero4{
-    background-color:#2b6ba2;;
-    height: 550px;;
+    background-color:#2b6ba2;
+    height: 34.375rem;
     overflow: hidden;
 }
 /* .demo{
@@ -164,114 +321,103 @@ header nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
-    margin: 100px auto;
+    max-width: 90rem;
+    width: 100%;
+    margin: 6.25rem auto;
 }
 .container2{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
-    margin: 80px auto;
+    max-width: 90rem;
+    width: 100%;
+    margin: 5rem auto;
 }
-.container3{
+ .container3{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
-    margin: 80px auto;
+    max-width: 90rem;
+    width: 100%;
+    margin: 5rem auto;
 }
 
 .container4{
     display: flex;
     justify-content:left;
-    width: 90%;
-    margin: 80px auto;
-}
+    max-width: 90rem;
+    width: 100%;
+    margin: 5rem auto;
+} 
+
 /* .containerd{
     display: flex;
     justify-content: center;
     align-items: center;
+    
     width: 90%;
     margin: 80px auto;
 } */
 
 .hero0-content0{
     flex: 1;
-    width: 600px;
-    margin:0px 25px;
+    width: 100%;
+    max-width: 100rem;
+    margin:0 1.5625rem;
     animation: fadeInUp 2s ease;
 }
 
-
-
-/* .demo-contentd{
-    flex: 1;
-    width: 600px;
-    margin:0px 25px;
-    animation: fadeInUp 2s ease;
-} */
 .hero0 h2{
-    font-size: 35px;
-    margin-bottom: 20px;
-    color:#666;
-
+    font-size: 2.1875rem;
+    margin-bottom: 1.25rem;
 }
 .hero2 h2{
-    font-size: 35px;
-    margin-bottom: 40px;
+    font-size: 2.1875rem;
+    margin-bottom: 2.5rem;
     /* color: #f8f8f8; */
     color:#33577e;  
 
 }
 .hero3 h2{
-    font-size: 40px;
-    margin-bottom: 20px;
-    color:#666;
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
-    margin: 80px auto;
+    max-width: 90rem;
+    width: 100%;
+    margin: 5rem auto;
     flex: 1;
     animation: fadeInRight 2s ease;
 
 }
 .hero4 h2{
-    font-size: 35px;
-    margin-bottom: 40px;
+    font-size: 2.1875rem;
+    margin-bottom: 2.5rem;
     color: #f8f8f8;
 }
-/* .demo h2{
-    font-size: 35px;
-    margin-bottom: 20px;
-    color:#666;
 
-} */
 .hero0 p{
-    font-size: 22px;
+    font-size: 1.375rem;
     line-height: 1.5;
-    margin-bottom: 50px;
-    color: #666;
+    margin-bottom: 3.125rem;
 }
 .hero2 p{
-    font-size: 22px;
+    font-size: 1.375rem;
     line-height: 1.5;
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
     color:#33577e;  
 }
 .hero3 p{
-    font-size: 22px;
+    font-size: 1.375rem;
     line-height: 1.5;
-    margin-bottom: 50px;
-    color: #666;
+    margin-bottom: 3.125rem;
 }
 
 .hero4 p{
-    font-size: 22px;
+    font-size: 1.375rem;
     line-height: 1.5;
-    margin-bottom: 40px;
-    color: #f8f8f8;
+    margin-bottom: 2.5rem;
 }
 /* .demo p{
     font-size: 22px;
@@ -281,9 +427,10 @@ header nav ul {
 } */
 .hero-image{
     flex: 1;
-    width: 600px;
+    width: 100%;
+    max-width: 37.5rem;
     margin: auto;
-    animation: fadeInRight 2s ease;
+    /* animation: fadeInRight 2s ease; */
 
 }
 .team-member {
@@ -294,7 +441,7 @@ header nav ul {
 .team-member img{
     width: 100%;
     height: auto;
-    border-radius:10px;
+    border-radius:0.625rem;
 
 }
 
@@ -302,21 +449,21 @@ header nav ul {
  @keyframes fadeInUp{
     0%{
         opacity: 0;
-        transform: translateY(50px);
+        transform: translateY(3.125rem);
     }
     100%{
         opacity: 1;
-        transform: translateY(0px);
+        transform: translateY(0);
     }
  }
  @keyframes fadeInRight{
     0%{
         opacity: 0;
-        transform: translateX(-50px);
+        transform: translateX(-3.125rem);
     }
     100%{
         opacity: 1;
-        transform: translateX(  0px);
+        transform: translateX(0);
     }
  }
  
@@ -324,41 +471,288 @@ header nav ul {
     display: flex;
     flex-direction: row;
     overflow-x: auto; /* Allows horizontal scrolling if content overflows */
-    gap: 90px;
+    gap: 5.625rem;
 }
 
 .team-member img {
-    width: 250px; /* Fixed size */
-    height: 250px; /* Fixed size */
+    width: 7.5rem; /* Fixed size */ /* Fixed size */
     margin: 0; /* Removes any default margin */
 }
-.team-member .name {
-    color: #666;
-    font-size: 25px;
+.team-member .name {    
+    font-size: 1.5625rem;
     font-weight: bold;
     text-align: center;
-    margin-top: 10px; /* Space between image and name */
+    margin-top: 0.625rem; /* Space between image and name */
+}
+/* help button start */
+.help-button {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    background-color: #46709c;
+    border-radius: 0.625rem 0 0 0.625rem; 
+    padding: 0.3125rem 0;
+    box-shadow: 0 0 0.3125rem;
 }
 
-/* .contact-info {
-    margin: 20px 0;
+.icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #46709c;
+    color: white;
+    cursor: pointer;
+    margin: 0.3125rem 0;
+    font-size: 1.25rem;
 }
-.social-media{
-    font-size: 25px;
+
+.icon:hover {
+    background-color: #483f93;
 }
-.contact-info a {
-    color: #b4dcf8;
+
+.help-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.help-modal-content {
+    background-color: white;
+    margin: 240px auto;
+    padding: 20px;
+    width: 1280px;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.help-close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.help-close:hover,
+.help-close:focus {
     text-decoration: none;
+    cursor: pointer;
 }
-.contact-info a:hover {
-    color: purple;
-    text-decoration: underline;
+/* help button end */
+
+/* footer start  */
+
+.contact-us {
+    padding: 30px 0px;
+    background-color:#1c4569;;
 }
-.social-media a {
-    color: #b4dcf8;
-    margin-right: 10px;
+
+.site-footer {
+    margin: -100px 0;
+    color: #609dd3;
 }
-.social-media a:hover {
-    color: purple;
-    text-decoration: underline;
-} */
+
+.site-footer h3 {
+    font-size: 19px; 
+}
+
+.site-footer p {
+    margin: 10px 0;
+    font-size: 15px;
+}
+
+.site-footer a {
+    margin: 10px 0;
+    font-size: 15px;
+    color: #609dd3;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.column {
+    text-align: left;
+    /* margin: 0 20px; */
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons i {
+    margin-left: 10px;
+    font-size: 1.5rem;
+    color: #ccc;
+}
+
+/* footer end  */
+
+/* Default styles for larger screens */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.navbar li {
+    margin: 0 10px;
+}
+
+
+
+
+/* Making it responsive */
+
+@media (max-width: 600px) {
+    nav {
+        display: none;
+    }
+    body {
+        padding-top: 0;
+    }
+    .buttons {
+        margin-top: 1rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem; /* Reduced vertical space between buttons */
+    }
+    .buttons .button {
+        font-size: 1rem !important;
+        height: 2rem; /* Explicitly set a smaller height */
+        width: 8rem; /* Adjust width to maintain proportion */
+        padding: 0.5rem; /* Reduced padding */
+        margin-bottom: 0.3rem; /* Additional reduction in vertical space */
+    }
+    
+   p {
+    font-size: 1rem !important; /* Reduced font size for all paragraphs on mobile */
+    display: flex;
+    flex-direction: column;
+   }
+    .hero,
+    .hero0,
+    .hero2,
+    .hero3,
+    .hero4 {
+        height: auto; /* This allows the section to grow with content */
+        padding: 1rem 1rem; /* Adjust padding for better spacing on mobile */
+    }
+
+    .hero p {
+        padding: 0 3rem;
+        text-align: left;
+    }
+
+    .hero0 .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero0 .hero0-content0 {
+        order: 1;
+        margin-top: 1rem;
+    }
+    .hero0 img {
+        max-width: 80%;
+        height: auto;
+        order: -1;
+    }
+    
+    main h2 {
+        font-size: 1.5rem !important;
+    }
+
+    .container,
+    .container2,
+    .container3,
+    .container4 {
+        margin-top: 0;
+        margin-bottom: 0rem;
+        padding: 1.5rem 1rem;
+    }
+
+    #contact.site-footer {
+        margin: 0 0 0 0;
+    }
+
+    .contact-us .container {
+        .contact-us .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        }
+    }
+
+    .site-footer {
+        display: flex;
+    }
+
+    .site-footer .column {
+        width: 49%;
+        text-align: left;
+        margin-bottom: 0rem;
+    }
+
+    .site-footer h3 {
+        font-size: 1rem !important;
+        margin-bottom: 0.5rem;
+    }
+
+    .site-footer p,
+    .site-footer a {
+        font-size: 0.7rem !important;
+        margin-bottom: 0.25rem;
+    }
+
+    .site-footer .column:last-child {
+        text-align: center;
+        margin-top: 1.5rem;
+        width: 100%;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+    }
+
+    .social-icons i {
+        font-size: 1rem !important;
+    }
+    
+    .container3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        width: 100.5 !important;
+        min-width: 100.5 !important;
+    }
+
+    .hero3 h2 {
+        margin-bottom: 1.5rem !important;
+    }
+}

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<!-- saved from url=(0047)file:///C:/Users/yash/Desktop/diya/Z/index.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/styles2.css') }}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -26,40 +28,34 @@
                     <option value="other">Other (please specify)</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label for="name">Other</label>
-                <input type="text" id="name" name="name">
+            <div id="otherMedicine" class="form-group" style="display: none;">
+                <label for="otherMedicineInput">Specify Other Medicine</label>
+                <input type="text" id="otherMedicineInput" name="otherMedicine" required>
             </div>
             <div class="form-group">
                 <label for="meetingDate">Expiry Date</label>
-                <input type="date" id="meetingDate" name="meetingDate" required="">
+                <input type="date" id="meetingDate" name="meetingDate" required>
             </div>
-            <div id="otherMedicine" style="display: none;">
-                <label for="otherMedicineInput">Specify Other Medicine</label>
-                <input type="text" id="otherMedicineInput" name="otherMedicine">
-            </div>
-           <div class="form-group">
+            <div class="form-group">
                 <label for="number">Quantity (more than 4)</label>
-                <input type="number" id="number" name="number" required="" min="5">
+                <input type="number" id="number" name="number" required min="5">
             </div>
             <div class="form-group">
                 <label for="image">Upload Image</label>
-                <input type="file" id="image" name="image" accept="image/*" required="">
+                <input type="file" id="image" name="image" accept="image/*" required>
             </div>
             <div class="form-group">
                 <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" required="">
+                <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
                 <label for="contactNumber">Contact Number</label>
-                <input type="tel" id="contactNumber" name="contactNumber" required="">
-                            </div>
-                       <div class="form-group">
+                <input type="tel" id="contactNumber" name="contactNumber" required>
             </div>
             <div class="form-group">
                 <label id="location-field" for="location">Address</label>
                 <div id="location">
-                    <input type="text" name="location" id="request-location" class="form-control" placeholder="Your location" readonly>
+                    <input type="text" name="location" id="request-location" class="form-control" placeholder="Your location" >
                     <button type="button" class="form-control" id="request-get-location" onclick="getLocation('request')">Get Location</button>
                 </div>
             </div>
@@ -68,7 +64,31 @@
             <div id="form-status"></div>
         </form>
     </div>
+     <!-- Help Button start -->
+    
+     <div class="help-button">
+        <div class="icon phone" onclick="showHelp('phone')"><i class="fas fa-phone-alt"></i></div>
+        <div class="icon email" onclick="showHelp('email')"><i class="fas fa-envelope"></i></div>
+        <div class="icon location" onclick="showHelp('location')"><i class="fas fa-map-marker-alt"></i></div>
+    </div>
+    <div id="helpModal" class="help-modal">
+        <div class="help-modal-content">
+            <span class="help-close" onclick="closeHelp()">&times;</span>
+            <div id="helpContent"></div>
+        </div>
+    </div>
+       <!-- Help Button end -->
+        <script>
+        document.getElementById('medicine').addEventListener('change', function() {
+          const otherMedicineField = document.getElementById('otherMedicine');
+          if (this.value === 'other') {
+            otherMedicineField.style.display = 'block';
+          } else {
+            otherMedicineField.style.display = 'none';
+            document.getElementById('otherMedicineInput').value = ''; // clear the input field
+          }
+        });
+    </script>
     <script src="{{ url_for('static', filename='../static/js/script.js') }}"></script>
-
-
-</body></html>
+</body>
+</html>

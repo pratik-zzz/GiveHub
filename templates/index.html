@@ -7,36 +7,45 @@
     <title>Your Website</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/styles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
-<body>
+<body id="home">
     <header>
         <nav>
+            
             <ul>
                 <li>
                     <div>
-                        <a href="{{ url_for('index') }}"><button>Home</button></a>
+                        <a href="#home"><button>Home</button></a>
                     </div>
                 </li>
                 <li>
                     <div>
-                        <a href="{{ url_for('about_us') }}"><button>About us</button></a>
+                        <a href="#about-us"><button>About us</button></a>
                     </div>
                 </li>
                 <li>
                     <div>
-                        <a href="{{ url_for('contact_us') }}"><button>Contact us</button></a>
+                        <a href="#contact-us"><button>Contact us</button></a>
                     </div>
                 </li>
             </ul>
+            <div class="spinner">
+                <div class="spinner1"></div>
+            </div>
+
             <div id="logo-container">
                 <img id="logo" src="{{ url_for('static', filename='../static/images/logo.png') }}" alt="Logo">
             </div>
         </nav>
     </header>
     <main>
-        <section class="hero">
-            <i><h1>Namaste </h1></i>
+        <section class="hero" >
+            <!-- <i><h1>Namaste </h1></i> -->
+             <div id="typing-text">
+                <h1 id="typed"></h1>
+             </div>
             <div class="buttons">
                 <button id="donateButton" class="button" data-url="{{ url_for('donation') }}">Donate</button>
                 <button id="requestButton" class="button" data-url="{{ url_for('request_medicine') }}">Request</button>
@@ -45,9 +54,8 @@
                 Welcome to GiveHub, where every pill counts towards a healthier tomorrow. We are dedicated to bridging the gap between surplus medication and those in need. By donating unused medicines, you not only extend their life but also extend a lifeline to individuals who may otherwise go without essential treatments. Join us in making a difference. Explore how you can donate, learn about our impact, and discover stories of hope from those who benefit from your generosity. Together, we can transform surplus into support and make healthcare more accessible for everyone.
             </p>
         </section>
-        
-        <section class="hero0">
-            <div class="container">
+        <section class="hero0" id="about-us">
+            <div class="container"  data-aos="fade-up" data-aso-delay="100">
                <div class="hero0-content0">
                    <h2>Our Mission</h2>
                    <p>Our mission is to make a meaningful impact on global health by
@@ -55,13 +63,13 @@
                          to bridging the gap between unused medicine and individuals who require them, 
                        all while collaborating with NGOs to maintain safety and legal compliance.</p>
                </div>
-                       <div class="hero-image">
-                           <img src="https://www.pngmart.com/files/About-Us-PNG-Isolated-File.png">
+                       <div class="hero-image" data-aos="fade-left" data-aso-delay="100">
+                           <img alt="image-saying-about-us" src="https://www.pngmart.com/files/About-Us-PNG-Isolated-File.png">
                        </div>
             </div> 
          </section>
          <section class="hero2">
-             <div class="container2">
+             <div class="container2"  data-aos="fade-up" data-aso-delay="100">
                 <div class="hero0-content0">
                    <h2>How it Works?</h2>
                <p>
@@ -76,52 +84,153 @@
                 </div>
              </div>
          </section>
-         <section class="hero3">
-           <div class="ph"> 
-           <h2>Team Members</h2>
-           </div>
-           <div class="container3">
-                   <div class="team-member">
-                       <div class="member1">
-                       <img src="static\images\aniket.jpg" alt="Team Member 1">
-                         <div class="name">Aniket Vaidya</div>
-                       </div>
-                       <div class="member2">
-                       <img src=static\images\pratik.jpg alt="Team Member 2">
-                         <div class="name">Pratik patil</div>
-                       </div>           
-           
-                      <div class="member3">
-                      <img src=static\images\lokesh.jpeg alt="Team Member 3">
-                         <div class="name">Lokesh Patil</div>
-                      </div>
-           
-                      <div class="member4">
-                       <img src=static\images\diksha.jpeg alt="Team Member 4">
-                        <div class="name">Diksha Rane</div>
-                       </div>
-                   </div>
-          </div>
-         </section>
-         <!-- <section class="hero4">
-           <div class="container4">
-               <div class="hero0-content0">
-                 <h2 >Story</h2>
-                 <p> We are a passionate team committed to addressing the challenges of medicine scarcity and wastage. Our platform connects generous donors with individuals and communities who need essential medicines.
-                     By facilitating the donation of unused medications, we aim to support health and well-being while reducing environmental impact.</p> -->
-            <!-- <div class="contact-info">
-            <p><strong>Email:</strong> <a href="mailto:ranediksha363@gmail.com">ranediksha363@gmail.com</a></p>
-            <p><strong>Phone:</strong> <a href="tel:8624061812">8624061812</a></p>
+          <section class="hero3" >
+            <div class="ph" >
+                <h2>Team Members</h2>
             </div>
-            <p><strong>Follow Us:</strong></p>
-             <div class="social-media">
-                <a href="https://www.instagram.com/diya_rane12?igsh=MWhydXBwYWV2NDNtNA==" target="_blank">Instagram</a>
-             </div> -->
+            <div class="container3" data-aos="fade-up" data-aso-delay="100">
+                <div class="team-member">
+                    <div class="card"data-aos="fade-down-100" data-aso-delay="100">
+                        <div class="card-image">
+                            <img src="/static/images/lokesh black bg 2.jpg" alt="Lokesh Patil">
+                        </div>
+                        <div class="card-content">
+                            <div class="name">Lokesh Patil</div>
+                            <!-- <div class="role">Team leader</div> -->
+                            <div class="role">Frontend Developer</div>
+                            <div class="social-media">
+                                <a href="https://twitter.com/lokesh" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="https://linkedin.com/in/lokesh" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://github.com/lokesh" target="_blank"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="card"data-aos="fade-down-100" data-aso-delay="100">
+                        <div class="card-image">
+                            <img src="/static/images/pratik black bg.jpeg" alt="Pratik Patil">
+                        </div>
+                        <div class="card-content">
+                            <div class="name">Pratik Patil</div>
+                            <div class="role">Backend Developer</div>
+                            <div class="social-media">
+                                <a href="https://twitter.com/pratik" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="https://linkedin.com/in/pratik" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://github.com/pratik" target="_blank"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="card"data-aos="fade-down-100" data-aso-delay="100">
+                        <div class="card-image">
+                            <img src="/static/images/aniket final.jpeg" alt="Lokesh Patil">
+                        </div>
+                        <div class="card-content">
+                            <div class="name">Aniket Vaidya</div>
+                            <div class="role">Backend Developer</div>
+                            <div class="social-media">
+                                <a href="https://twitter.com/lokesh" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="https://linkedin.com/in/lokesh" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://github.com/lokesh" target="_blank"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="card"data-aos="fade-down-100" data-aso-delay="100">
+                        <div class="card-image">
+                            <img src="/static/images/diksha2-removebg-preview2.png" alt="Diksha Rane">
+                        </div>
+                        <div class="card-content">
+                            <div class="name">Diksha Rane</div>
+                            <div class="role">Frontend Developer</div>
+                            <div class="social-media">
+                                <a href="https://twitter.com/diksha" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="https://linkedin.com/in/diksha" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://github.com/diksha" target="_blank"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-         </section> 
-    </main>
-    <script src="{{ url_for('static', filename='../static/js/script.js') }}"></script>
+        </section>
 
+        <!-- Help Button start -->
+    
+    <div class="help-button">
+        <div class="icon phone" onclick="showHelp('phone')"><i class="fas fa-phone-alt"></i></div>
+        <div class="icon email" onclick="showHelp('email')"><i class="fas fa-envelope"></i></div>
+        <div class="icon location" onclick="showHelp('location')"><i class="fas fa-map-marker-alt"></i></div>
+    </div>
+    <div id="helpModal" class="help-modal">
+        <div class="help-modal-content">
+            <span class="help-close" onclick="closeHelp()">&times;</span>
+            <div id="helpContent"></div>
+        </div>
+    </div>
+       <!-- Help Button end -->
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </main>
+    <section class="contact-us" id="contact-us">
+        <footer class="site-footer" id="contact">
+           <div class="container">
+               <div class="column">
+                 <h3>Registration Office</h3>
+                 <p>XYZ,Jalgaon, Maharashtra, India, 425001</p>
+                 <p>24X7 In Service</p>
+                 <p>Monday - Sunday</p>
+               </div>
+               <div class="column">
+                 <h3>Our Hub</h3>
+                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=givehubdonation@gmail.com" class="social-icon" target="_blank" rel="noopener noreferrer"><span>givehubdonation@gmail.com</span></a>
+                 <p>123 xyz Nagar, <br>Jalgaon, Maharashtra <br> 425001</p>
+               </div>
+               <div class="column">
+                    <div></div>
+                 <h3>Socials</h3>
+                 <div class="social-icons">
+                   <a href="https://www.facebook.com/profile.php?id=61563915081013" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook-f"></i></a>
+               
+               <a href="https://www.instagram.com/givehubdonation?igsh=MWNhZGswZHBzc3Bxcw==" class="social-icon" target="_blank" rel="noopener noreferrer">
+               <i class="fab fa-instagram"></i>
+               </a>
+               <a href="https://mail.google.com/mail/?view=cm&fs=1&to=givehubdonation@gmail.com" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-envelope"></i>
+            </a>
+                 </div>
+                 
+                 <p class="footer-bottommost">Copyright © GIVE HUB 2024</p>
+                 <p class="footer-bottommost">Design: Tech Titans </p>
+               </div>
+             </div>
+         </footer>
+      </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init();
+        });
+    </script>
+    <script src="{{ url_for('static', filename='../static/js/script.js') }}"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var options = {
+            strings: ["Hello", "नमस्ते" ,"नमस्कार"],
+            typeSpeed: 40,
+            backSpeed: 40,
+            loop: true,
+            backDelay: 2000,
+            startDelay: 500
+          };
+  
+          var typed = new Typed("#typed", options);
+        });
+      </script>
 </body>
+
 </html>
