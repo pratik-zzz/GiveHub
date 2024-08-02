@@ -71,3 +71,21 @@ function getLocation(formId) {
       alert("Geolocation is not supported by this browser.");
   }
 }
+// Help modal functions
+function showHelp(type) {
+  var helpContent = document.getElementById('helpContent');
+  if (helpContent) {
+    if (type === 'phone') {
+      helpContent.innerHTML = '<p>Contact us via phone at:</p><p>Phone: <a href="tel:+9102570000000">+91-0257-0000000</a></p>';
+    } else if (type === 'email') {
+      helpContent.innerHTML = '<p>Contact us via email at:</p><p>Email: <a href="mailto:givehubdonations@gmail.com">givehubdonations@gmail.com</a></p>';
+    } else if (type === 'location') {
+      helpContent.innerHTML = '<p>Our location is:</p><p>xyz 123 Nagar, Jalgaon, Maharashtra, India 425001.</p>';
+    }
+    document.getElementById('helpModal').style.display = 'block';
+  }
+}
+
+function closeHelp() {
+  document.getElementById('helpModal').style.display = 'none';
+}

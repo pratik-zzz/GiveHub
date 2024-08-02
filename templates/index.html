@@ -20,7 +20,7 @@
                 </li>
                 <li>
                     <div>
-                        <a href="{{ url_for('about_us') }}"><button>About us</button></a>
+                        <a href="#about-us"><button>About us</button></a>
                     </div>
                 </li>
                 <li>
@@ -45,7 +45,7 @@
                 Welcome to GiveHub, where every pill counts towards a healthier tomorrow. We are dedicated to bridging the gap between surplus medication and those in need. By donating unused medicines, you not only extend their life but also extend a lifeline to individuals who may otherwise go without essential treatments. Join us in making a difference. Explore how you can donate, learn about our impact, and discover stories of hope from those who benefit from your generosity. Together, we can transform surplus into support and make healthcare more accessible for everyone.
             </p>
         </section>
-        
+        <section id="about-us">
         <section class="hero0">
             <div class="container">
                <div class="hero0-content0">
@@ -103,6 +103,20 @@
                    </div>
           </div>
          </section>
+         <!-- Help Button start -->
+    
+    <div class="help-button">
+        <div class="icon phone" onclick="showHelp('phone')"><i class="fas fa-phone-alt"></i></div>
+        <div class="icon email" onclick="showHelp('email')"><i class="fas fa-envelope"></i></div>
+        <div class="icon location" onclick="showHelp('location')"><i class="fas fa-map-marker-alt"></i></div>
+    </div>
+    <div id="helpModal" class="help-modal">
+        <div class="help-modal-content">
+            <span class="help-close" onclick="closeHelp()">&times;</span>
+            <div id="helpContent"></div>
+        </div>
+    </div>
+       <!-- Help Button end -->
          <!-- <section class="hero4">
            <div class="container4">
                <div class="hero0-content0">
@@ -117,11 +131,45 @@
              <div class="social-media">
                 <a href="https://www.instagram.com/diya_rane12?igsh=MWhydXBwYWV2NDNtNA==" target="_blank">Instagram</a>
              </div> -->
-            </div>
+            <!-- </div>
           </div>
          </section> 
+        </section> -->
     </main>
+    <section class="contact" id="contact">
+        <footer class="site-footer" id="contact">
+           <div class="containerz">
+               <div class="column">
+                 <h3>Reg.Office</h3>
+                 <p>XYZ,Jalgaon, Maharashtra, India, 425001</p>
+                 <p>24X7 In Service</p>
+                 <p>Monday - Sunday</p>
+               </div>
+               <div class="column">
+                 <h3>Our HUB</h3>
+                 <a href="mailto:givehubdonation@gmail.com" class="social-icon" target="_blank" rel="noopener noreferrer"><p>givehubdonation@gmail.com</p></a>
+                 <p>123 xyz Nagar, <br>Jalgaon, Maharashtra <br> 425001</p>
+               </div>
+               <div class="column">
+                 <h3>Socials</h3>
+                 <div class="social-icons">
+                   <a href="https://www.facebook.com/profile.php?id=61563915081013" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook-f"></i></a>
+               
+               <a href="https://www.instagram.com/givehubdonation?igsh=MWNhZGswZHBzc3Bxcw==" class="social-icon" target="_blank" rel="noopener noreferrer">
+               <i class="fab fa-instagram"></i>
+               </a>
+               <a href="mailto:givehubdonation@gmail.com" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-envelope"></i>
+            </a>
+                 </div>
+                 
+                 <p>Copyright © GIVE HUB 2024</p>
+                 <p>Design: Tech Titans </p>
+               </div>
+             </div>
+         </footer>
+      </section>
     <script src="{{ url_for('static', filename='../static/js/script.js') }}"></script>
-
 </body>
 </html>

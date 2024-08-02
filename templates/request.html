@@ -58,5 +58,19 @@
             <div id="form-status"></div>
         </form>
     </div>
+    <!-- Help Button start -->
+    
+    <div class="help-button">
+        <div class="icon phone" onclick="showHelp('phone')"><i class="fas fa-phone-alt"></i></div>
+        <div class="icon email" onclick="showHelp('email')"><i class="fas fa-envelope"></i></div>
+        <div class="icon location" onclick="showHelp('location')"><i class="fas fa-map-marker-alt"></i></div>
+    </div>
+    <div id="helpModal" class="help-modal">
+        <div class="help-modal-content">
+            <span class="help-close" onclick="closeHelp()">&times;</span>
+            <div id="helpContent"></div>
+        </div>
+    </div>
+       <!-- Help Button end -->
     <script src="{{ url_for('static', filename='../static/js/script.js') }}"></script>
 </body></html>
