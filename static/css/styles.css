@@ -638,8 +638,8 @@ nav ul button:hover {
     }
     .buttons .button {
         font-size: 1rem !important;
-        height: 2rem; /* Explicitly set a smaller height */
-        width: 8rem; /* Adjust width to maintain proportion */
+        height: 3rem; /* Explicitly set a smaller height */
+        width: 9rem; /* Adjust width to maintain proportion */
         padding: 0.5rem; /* Reduced padding */
         margin-bottom: 0.3rem; /* Additional reduction in vertical space */
     }
@@ -689,6 +689,12 @@ nav ul button:hover {
         margin-top: 0;
         margin-bottom: 0rem;
         padding: 1.5rem 1rem;
+    }
+
+    .icon {
+        height: 1.3rem;
+        width: 1.2rem;
+        font-size: 0.8rem;
     }
 
     #contact.site-footer {
