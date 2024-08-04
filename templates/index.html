@@ -12,8 +12,7 @@
 </head>
 <body id="home">
     <header>
-        <nav>
-            
+        <nav id="desktop-nav">
             <ul>
                 <li>
                     <div>
@@ -34,15 +33,39 @@
             <div class="spinner">
                 <div class="spinner1"></div>
             </div>
-
             <div id="logo-container">
                 <img id="logo" src="{{ url_for('static', filename='../static/images/logo.png') }}" alt="Logo">
             </div>
         </nav>
+        <nav id="mobile-nav">
+            <button id="mobile-nav-toggle" class="mobile-nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul id="nav-menu">
+                <li>
+                    <div>
+                        <a href="#home"><button id="home-button"><i class="fas fa-home"></i> Home</button></a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a href="#about-us"><button id="about-button"><i class="fas fa-info-circle"></i> About us</button></a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a href="#contact-us"><button id="contact-button"><i class="fas fa-phone"></i> Contact us</button></a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
     </header>
     <main>
         <section class="hero" >
-            <!-- <i><h1>Namaste </h1></i> -->
+            <div class="mobile-spinner"></div>
+            <div id="mobile-logo-container">
+                <img id="mobile-logo" src="{{ url_for('static', filename='../static/images/logo.png') }}" alt="Logo">
+            </div>
              <div id="typing-text">
                 <h1 id="typed"></h1>
              </div>
@@ -74,12 +97,12 @@
                    <h2>How it Works?</h2>
                <p>
                1. Donation Process: Donors can easily contribute unused or surplus
-                medicines through our user-friendly platform. Once a donation is made, our team arranges for collection from the donor’s location.
+                medicines through our user-friendly platform. Once a donation is made, our team arranges for collection from the donor's location.
                </p>
-               <p>2.Safety and Compliance: We work closely with NGOs and healthcare professionals to ensure that all donated medicines are safe, properly documented,
+               <p>2. Safety and Compliance: We work closely with NGOs and healthcare professionals to ensure that all donated medicines are safe, properly documented,
                 and comply with legal and regulatory standards. Our rigorous inspection process guarantees the quality and safety of every donation.
                </p>
-               <p> 3. Request and Delivery: Individuals in need can request medicines through our platform. We ensure that these requests are promptly processed and
+               <p>3. Request and Delivery: Individuals in need can request medicines through our platform. We ensure that these requests are promptly processed and
                 delivered to the recipient, providing timely support where it is most needed.</p>
                 </div>
              </div>
@@ -141,7 +164,7 @@
                 <div class="team-member">
                     <div class="card"data-aos="fade-down-100" data-aso-delay="100">
                         <div class="card-image">
-                            <img src="/static/images/diksha2-removebg-preview2.png" alt="Diksha Rane">
+                            <img src="/static/images/diksha.jpg" alt="Diksha Rane">
                         </div>
                         <div class="card-content">
                             <div class="name">Diksha Rane</div>
@@ -230,6 +253,45 @@
   
           var typed = new Typed("#typed", options);
         });
+
+        document.getElementById('mobile-nav-toggle').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('half-open');
+            this.classList.toggle('active');
+        });
+    
+        // script.js
+        function closeMobileNav() {
+            document.getElementById('nav-menu').classList.remove('show');
+        }
+        
+        const homeButton = document.getElementById('home-button');
+        const aboutButton = document.getElementById('about-button');
+        const contactButton = document.getElementById('contact-button');
+        
+        homeButton.addEventListener('click', function() {
+            scrollToSection('home');
+            closeMobileNav();
+        });
+        
+        aboutButton.addEventListener('click', function() {
+            scrollToSection('about-us');
+            closeMobileNav();
+        });
+        
+        contactButton.addEventListener('click', function() {
+            scrollToSection('contact-us');
+            closeMobileNav();
+        });
+        
+        function scrollToSection(id) {
+            const targetElement = document.getElementById(id);
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+        
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
       </script>
 </body>
 

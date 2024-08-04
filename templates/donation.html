@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <h2>DONATE</h2>
-        <form id="contact-form" method="POST" action="{{ url_for('donation') }}" enctype="multipart/form-data">
+        <form id="contact-form" method="POST" action="{{ url_for('donation') }}" enctype="multipart/form-data" onsubmit="return submitForm()">
             <div class="form-group">
                 <label for="medicine">Medicine Name</label>
                 <select id="medicine" name="medicine">
@@ -25,12 +25,12 @@
                     <option value="loratadine">Loratadine</option>
                     <option value="metformin">Metformin</option>
                     <option value="simvastatin">Simvastatin</option>
-                    <option value="other">Other (please specify)</option>
+                    <option value="other">Other</option>
                 </select>
             </div>
             <div id="otherMedicine" class="form-group" style="display: none;">
                 <label for="otherMedicineInput">Specify Other Medicine</label>
-                <input type="text" id="otherMedicineInput" name="otherMedicine" required>
+                <input type="text" id="otherMedicineInput" name="otherMedicine">
             </div>
             <div class="form-group">
                 <label for="meetingDate">Expiry Date</label>
@@ -80,14 +80,29 @@
        <!-- Help Button end -->
         <script>
         document.getElementById('medicine').addEventListener('change', function() {
-          const otherMedicineField = document.getElementById('otherMedicine');
-          if (this.value === 'other') {
-            otherMedicineField.style.display = 'block';
-          } else {
-            otherMedicineField.style.display = 'none';
-            document.getElementById('otherMedicineInput').value = ''; // clear the input field
-          }
+            const otherMedicineField = document.getElementById('otherMedicine');
+            const otherMedicineInput = document.getElementById('otherMedicineInput');
+            if (this.value === 'other') {
+                otherMedicineField.style.display = 'block';
+                otherMedicineInput.setAttribute('required', '');
+            } else {
+                otherMedicineField.style.display = 'none';
+                otherMedicineInput.removeAttribute('required');
+                otherMedicineInput.value = '';
+            }
         });
+
+        function submitForm() {
+            const medicineSelect = document.getElementById('medicine');
+            const otherMedicineInput = document.getElementById('otherMedicineInput');
+
+            if (medicineSelect.value === 'other' && otherMedicineInput.value.trim() === '') {
+                alert('Please specify the other medicine.');
+                return false;
+            }
+            alert("Thank you for donating! We will contact you soon.");
+            return true;
+        }
     </script>
     <script src="{{ url_for('static', filename='../static/js/script.js') }}"></script>
 </body>

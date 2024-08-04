@@ -32,28 +32,32 @@ def contact_us():
 @app.route('/donation', methods=['GET', 'POST'])
 def donation():
     if request.method == 'POST':
-        # Get form data
-        medicine = request.form['medicine']
-        expiry_date = request.form['meetingDate']
-        quantity = request.form['number']
-        image = request.files['image']
-        donor_name = request.form['name']
-        contact_number = request.form['contactNumber']
-        address = request.form['address']
+        try:
+            # Get form data
+            medicine = request.form['medicine']
+            expiry_date = request.form['meetingDate']
+            quantity = request.form['number']
+            image = request.files['image']
+            donor_name = request.form['name']
+            contact_number = request.form['contactNumber']
+            address = request.form['address']
 
-        # Connect to the database and insert the form data into the donations table
-        conn = get_db_connection()
-        cur = conn.cursor()
-        cur.execute(
-            "INSERT INTO donations (medicine, expiry_date, quantity, image, donor_name, contact_number, address) VALUES (%s, %s, %s, %s, %s, %s, %s)",
-            (medicine, expiry_date, quantity, image.read(), donor_name, contact_number, address)
-        )
-        conn.commit()  # Commit the transaction
-        cur.close()  # Close the cursor
-        conn.close()  # Close the connection
+            # Connect to the database and insert the form data into the donations table
+            conn = get_db_connection()
+            cur = conn.cursor()
+            cur.execute(
+                "INSERT INTO donations (medicine, expiry_date, quantity, image, donor_name, contact_number, address) VALUES (%s, %s, %s, %s, %s, %s, %s)",
+                (medicine, expiry_date, quantity, image.read(), donor_name, contact_number, address)
+            )
+            conn.commit()  # Commit the transaction
+            cur.close()  # Close the cursor
+            conn.close()  # Close the connection
 
-        # Redirect to the home page after successful form submission
-        return redirect(url_for('index'))
+            # Redirect to the home page after successful form submission
+            return redirect(url_for('index'))
+        except Exception as e:
+            print(f"Error in donation: {str(e)}")
+            return redirect(url_for('index'))
 
     # Render the donation form if the request method is GET
     return render_template('donation.html')
@@ -62,26 +66,30 @@ def donation():
 @app.route('/request', methods=['GET', 'POST'])
 def request_medicine():
     if request.method == 'POST':
-        # Get form data
-        medicine = request.form['medicine']
-        quantity = request.form['number']
-        requester_name = request.form['name']
-        contact_number = request.form['contactNumber']
-        address = request.form['address']
+        try:
+            # Get form data
+            medicine = request.form['medicine']
+            quantity = request.form['number']
+            requester_name = request.form['name']
+            contact_number = request.form.get('contactNumber', '')
+            address = request.form['location']
 
-        # Connect to the database and insert the form data into the requests table
-        conn = get_db_connection()
-        cur = conn.cursor()
-        cur.execute(
-            "INSERT INTO requests (medicine, quantity, requester_name, contact_number, address) VALUES (%s, %s, %s, %s, %s)",
-            (medicine, quantity, requester_name, contact_number, address)
-        )
-        conn.commit()  # Commit the transaction
-        cur.close()  # Close the cursor
-        conn.close()  # Close the connection
+            # Connect to the database and insert the form data into the requests table
+            conn = get_db_connection()
+            cur = conn.cursor()
+            cur.execute(
+                "INSERT INTO requests (medicine, quantity, requester_name, contact_number, address) VALUES (%s, %s, %s, %s, %s)",
+                (medicine, quantity, requester_name, contact_number, address)
+            )
+            conn.commit()  # Commit the transaction
+            cur.close()  # Close the cursor
+            conn.close()  # Close the connection
 
-        # Redirect to the home page after successful form submission
-        return redirect(url_for('index'))
+            # Redirect to the home page after successful form submission
+            return redirect(url_for('index'))
+        except Exception as e:
+            print(f"Error in request: {str(e)}")
+            return redirect(url_for('index'))
 
     # Render the request form if the request method is GET
     return render_template('request.html')

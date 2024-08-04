@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <h2>REQUEST</h2>
-        <form id="contact-form" method="POST" action="{{ url_for('request_medicine') }}" enctype="multipart/form-data">
+        <form id="contact-form" method="POST" action="{{ url_for('request_medicine') }}" enctype="multipart/form-data" onsubmit="return submitForm()">
             <div class="form-group">
                 <label for="medicine">Medicine Name</label>
                 <select id="medicine" name="medicine">
@@ -41,8 +41,8 @@
                 <input type="text" id="name" name="name" required="">
             </div>
             <div class="form-group">
-                <label for="requesterContact">Your Contact Number</label>
-                <input type="text" id="name" name="name" required="">
+                <label for="contactNumber">Your Contact Number</label>
+                <input type="text" id="contactNumber" name="contactNumber" required="">
             </div>
             <div class="form-group">
                 <label for="location">Address</label>
@@ -80,6 +80,11 @@
             document.getElementById('otherMedicineInput').value = ''; // clear the input field
           }
         });
+
+        function submitForm() {
+            alert("Your request has been submitted. We will contact you soon.");
+            return true;
+        }
     </script>
     <script src="{{ url_for('static', filename='../static/js/script.js') }}"></script>
 </body></html>

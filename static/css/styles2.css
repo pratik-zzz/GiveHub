@@ -1,3 +1,6 @@
+html {
+    background:  #8eaac8;;
+}
 /* Reset some default browser styles */
 body, h2, form, input, textarea, button {
     margin: 0;
@@ -6,7 +9,6 @@ body, h2, form, input, textarea, button {
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom, #92b6d1, #aabcc8, #aabcc8, #92b6d1);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -163,7 +165,7 @@ button:hover {
 }
 /* help button end */
 
-@media (max-width: 37.5rem) {
+@media (max-width: 992px) {
 
     #donation-container {
         width: 100%;

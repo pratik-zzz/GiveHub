@@ -12,6 +12,7 @@ html, body {
     box-sizing: border-box;
     overflow-x: hidden;
     width: 100%;
+    background: #8eaac8;
 }
 
 h1 {
@@ -71,7 +72,7 @@ h1 {
 
 .button:hover {
     transform: scale(1.05);
-    box-shadow: 0.625rem 0.625rem 1.25rem rgba(7, 26, 46, 0.5);
+    box-shadow: 0.625rem 0.6rem 1.25rem rgba(7, 26, 46, 0.5);
 }
 
 .button:active {
@@ -120,7 +121,6 @@ nav ul button {
     border-radius: 1.25rem;
     height: 6.25rem;
     width: 13.75rem;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); Add shadow for better visibility */
     font-size: 1rem;
     background-color: #33577e;
     border: none;
@@ -182,6 +182,103 @@ nav ul button:hover {
     border: solid #33577e 1.875rem;
 }
 
+/* Styling for the mobile spinner */
+.mobile-spinner {
+    margin-top: 3rem;
+    width: 5.5rem;
+    height: 5.5rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: spinning82341 2s linear infinite;
+    border-radius: 5.625rem;
+    filter: blur(1px);
+    box-shadow: 0 -0.3125rem 0.5rem 0 rgb(168, 70, 224), 0 0.3125rem 0.5rem 0 rgb(0, 225, 255);
+    display: none;
+}
+
+/* Styling for the mobile logo container */
+#mobile-logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 2.8rem;
+    display: none;
+}
+
+/* Styling for the mobile logo */
+#mobile-logo {
+    height: 6rem;
+    width: 6rem;
+    background-color: #ffff;
+    border-radius: 50%;;
+    border: solid #33577e 0.5rem;
+}
+
+/* Add styles for mobile navbar */
+#mobile-nav {
+    display: none;
+}
+
+#mobile-nav-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1100; /* Ensure the toggle button is above other content */
+    border: 0;
+    background: none;
+    font-size: 1.75rem;
+    color: #44505b;
+    transition: background 0.3s, color 0.3s;
+    cursor: pointer;
+    border-radius: 0.375rem;
+    padding: 0.3125rem;
+}
+
+#nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: -50%;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(248, 249, 250, 0.3);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    z-index: 1000;
+    transition: right 0.3s ease-in-out;
+    padding-top: 4rem;
+}
+
+#nav-menu.half-open {
+    right: 0;
+}
+
+#nav-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav-menu li {
+    margin-bottom: 1.25rem; 
+}
+
+#nav-menu a {
+    text-decoration: none;
+    color: #333;
+}
+
+#nav-menu a:hover {
+    color: #666;
+}
+
+#nav-menu button {
+    width: 8rem;
+}
 
 *{
     margin: 0;
@@ -246,8 +343,7 @@ nav ul button:hover {
 .card-image {
 /*     position: relative; */
     top: -2.5rem;
-    /* margin-top: 20px; */
-     margin: 1.875rem auto auto auto; 
+    margin: 1.875rem auto auto auto; 
     width: 7.5rem;
     height: 7.5rem;
     border-radius: 50%;
@@ -296,26 +392,12 @@ nav ul button:hover {
     color: #619cda;
 }
 
-.card:hover {
-    transform: translateY(-0.625rem);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
-
-.card:hover .card-image {
-    transform: translateY(-0.625rem);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
-
 .hero4{
     background-color:#2b6ba2;
     height: 34.375rem;
     overflow: hidden;
 }
-/* .demo{
-    background-color:#f8f8f8;;
-    height: 550px;;
-    overflow: hidden;
-} */
+
 
 .container{
     display: flex;
@@ -349,15 +431,6 @@ nav ul button:hover {
     width: 100%;
     margin: 5rem auto;
 } 
-
-/* .containerd{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    width: 90%;
-    margin: 80px auto;
-} */
 
 .hero0-content0{
     flex: 1;
@@ -419,12 +492,7 @@ nav ul button:hover {
     line-height: 1.5;
     margin-bottom: 2.5rem;
 }
-/* .demo p{
-    font-size: 22px;
-    line-height: 1.5;
-    margin-bottom: 50px;
-    color: #666;
-} */
+
 .hero-image{
     flex: 1;
     width: 100%;
@@ -526,20 +594,19 @@ nav ul button:hover {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
 }
-
 .help-modal-content {
     background-color: white;
-    margin: 240px auto;
-    padding: 20px;
-    width: 1280px;
-    max-width: 400px;
-    border-radius: 10px;
+    margin: 15vh auto;
+    padding: 1.25rem;
+    width: 90%;
+    max-width: 25rem;
+    border-radius: 0.625rem;
     text-align: center;
 }
 
 .help-close {
     float: right;
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: bold;
     cursor: pointer;
 }
@@ -554,27 +621,27 @@ nav ul button:hover {
 /* footer start  */
 
 .contact-us {
-    padding: 30px 0px;
-    background-color:#1c4569;;
+    padding: 1.875rem 0;
+    background-color:#1c4569;
 }
 
 .site-footer {
-    margin: -100px 0;
-    color: #609dd3;
+    margin: -6.25rem 0;
+    color: #9aa6b2;
 }
 
 .site-footer h3 {
-    font-size: 19px; 
+    font-size: 1.1875rem; 
 }
 
 .site-footer p {
-    margin: 10px 0;
-    font-size: 15px;
+    margin: 0.625rem 0;
+    font-size: 0.9375rem;
 }
 
 .site-footer a {
-    margin: 10px 0;
-    font-size: 15px;
+    margin: 0.625rem 0;
+    font-size: 0.9375rem;
     color: #609dd3;
 }
 
@@ -586,7 +653,7 @@ nav ul button:hover {
 
 .column {
     text-align: left;
-    /* margin: 0 20px; */
+    /* margin: 0 1.25rem; */
 }
 
 .social-icons {
@@ -595,7 +662,7 @@ nav ul button:hover {
 }
 
 .social-icons i {
-    margin-left: 10px;
+    margin-left: 0.625rem;
     font-size: 1.5rem;
     color: #ccc;
 }
@@ -615,21 +682,28 @@ nav ul button:hover {
 }
 
 .navbar li {
-    margin: 0 10px;
+    margin: 0 0.625rem;
 }
-
-
 
 
 /* Making it responsive */
 
-@media (max-width: 600px) {
+@media (max-width: 992px) {
     nav {
         display: none;
     }
     body {
         padding-top: 0;
     }
+
+    .mobile-spinner, #mobile-logo-container {
+        display: block;
+    }
+
+    #typing-text {
+        margin-top: 12rem;
+    }
+
     .buttons {
         margin-top: 1rem;
         flex-direction: column;
@@ -763,6 +837,60 @@ nav ul button:hover {
     }
 
     .contact-form .form-group {
-        width: 10px !important;
+        width: 100% !important;
     }
+
+    #desktop-nav {
+        display: none;
+    }
+    #mobile-nav {
+        display: block;
+    }
+    nav{
+        background-color: transparent;
+        box-shadow: none;
+    }
+    nav ul button {
+        border-radius: 1.25rem;
+        height: 2.25rem;
+        width: 4.75rem;
+        padding-bottom: 0.3125rem;
+        font-size: 1rem;
+        background-color: #33577e;
+        border: none;
+        color: white;
+        cursor: pointer;
+        margin-top: -1.25rem; /* Move the button upwards */
+    }
+    /* Hover effect for buttons */
+    nav ul button:hover {
+        background: #3e6898;
+    }
+
+    
+    .help-modal-content {
+        background-color: white;
+        margin: 240px auto;
+        padding: 20px;
+        width: 1000px;
+        max-width: 300px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    
+    .help-close {
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .help-close:hover,
+    .help-close:focus {
+        text-decoration: none;
+        cursor: pointer;
+    }
+    /* help button end */
+
+
 }

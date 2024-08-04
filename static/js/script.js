@@ -82,3 +82,4 @@ function showHelp(type) {
 function closeHelp() {
   document.getElementById('helpModal').style.display = 'none';
 }
+
