@@ -696,7 +696,7 @@ nav ul button:hover {
         padding-top: 0;
     }
 
-    .mobile-spinner, #mobile-logo-container {
+    .bil-spinner, #mobile-logo-container {
         display: block;
     }
 
@@ -845,6 +845,7 @@ nav ul button:hover {
     }
     #mobile-nav {
         display: block;
+        z-index: 2000;
     }
     nav{
         background-color: transparent;
