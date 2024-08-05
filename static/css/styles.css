@@ -184,9 +184,9 @@ nav ul button:hover {
 
 /* Styling for the mobile spinner */
 .mobile-spinner {
-    margin-top: 3rem;
-    width: 5.5rem;
-    height: 5.5rem;
+    margin-top: 3.2rem;
+    width: 5.3rem;
+    height: 5.3rem;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -696,7 +696,7 @@ nav ul button:hover {
         padding-top: 0;
     }
 
-    .bil-spinner, #mobile-logo-container {
+    .mobile-spinner, #mobile-logo-container {
         display: block;
     }
 
