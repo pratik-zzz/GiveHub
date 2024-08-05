@@ -69,7 +69,7 @@ function showHelp(type) {
   var helpContent = document.getElementById('helpContent');
   if (helpContent) {
     if (type === 'phone') {
-      helpContent.innerHTML = '<p>Contact us via phone at:</p><p>Phone: <a href="tel:+9102570000000">+91-0257-0000000</a></p>';
+      helpContent.innerHTML = '<p>Contact us via phone at:</p><p>Phone: <a href="tel:+91-9422188681">+91-9422188681</a></p>';
     } else if (type === 'email') {
       helpContent.innerHTML = '<p>Contact us via email at:</p><p>Email: <a href="mailto:givehubdonations@gmail.com">givehubdonations@gmail.com</a></p>';
     } else if (type === 'location') {
